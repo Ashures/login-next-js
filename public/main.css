@@ -8,9 +8,49 @@ body { margin: 0; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: sans-serif;
 }
 
 .main h1 { margin-top: 0; }
+
+.entry-table {
+    transition: 200ms linear;
+}
+
+.entry-tabs > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px;
+    margin: 0;
+    list-style: none;
+    height: 100%;
+    border-radius: 5px 5px 0px 0px;
+    background-color: gray;
+}
+
+.entry-tabs > ul button li {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entry-tabs > ul li:hover {
+    background-color: lightgray;
+    height: 100%;
+}
+
+.entry-tabs > ul button {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.entry-form {
+    border-radius: 0px 0px 5px 5px;
+    background-color: lightgray;
+    padding: 30px 20px;
+}
 
 #login-form {
     display: flex;
@@ -19,20 +59,40 @@ body { margin: 0; }
     position: relative;
 }
 
-.login-btn {
+#register-form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 3px;
+    position: relative;
 }
 
-#login-error {
+.login-btn {
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+#login-error,
+#register-error {
     display: none;
     position: absolute;
     color: red;
-    bottom: -20px;
+    top: 5px;
 }
 
-.home-page {
-    font-family: sans-serif;
+#register-success {
+    display: none;
+    position: absolute;
+    background-color: gray;
+    color: lime;
+    bottom: 5px;
+}
+
+#register-token {
+    background-color: gray;
+    border: none;
+    width: 100%;
+    color: white;
 }
 
 .home-page h1 {
