@@ -35,11 +35,18 @@ export default function LoginForm() {
 
         if (!res.ok) {
             error.style.display = "block";
+            error.innerHTML = "User not found!";
             return;
         }
 
         const data = await res.json();
         error.style.display = "none";
+        
+        if (data.data.symbol != username.toUpperCase()) {
+            error.style.display = "block";
+            error.innerHTML = "Invalid username!";
+            return;
+        }
         
         loginUser();
     };
@@ -55,7 +62,12 @@ export default function LoginForm() {
     skipLogin();
 
     return (
-        <form id="login-form" onSubmit={handleSubmit} method="POST">
+        <form className="entry-form" id="login-form" onSubmit={handleSubmit} method="POST">
+            <div className="login-row" id="login-error">
+                <span>
+                    User not found!
+                </span>
+            </div>
             <div className="login-row">
                 <input type="text" name="username" id="login-username" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
             </div>
@@ -64,12 +76,6 @@ export default function LoginForm() {
             </div>
             <div className="login-row login-btn">
                 <button>Log-in</button>
-                <a href="/register">Register</a>
-            </div>
-            <div className="login-row" id="login-error">
-                <span>
-                    User not found!
-                </span>
             </div>
         </form>
     );
