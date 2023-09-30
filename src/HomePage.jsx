@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-export default function Welcome() {
+export default function HomePage() {
     const [token, setToken] = useState(() => {
         const cookies = document.cookie;
         const cookieList = cookies.split(";");

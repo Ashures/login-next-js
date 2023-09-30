@@ -1,9 +1,9 @@
-import Welcome from "@/Welcome";
+import HomePage from "@/HomePage";
 
 export default function Home() {
     return (
         <>
-            <Welcome />
+            <HomePage />
         </>
     );
 }
