@@ -1,10 +1,9 @@
-import LoginForm from "@/LoginForm";
+import EntryOptions from "@/EntryOptions";
 
 export default function Home() {
+  
+
   return (
-    <>
-      <h1>Log-in</h1>
-      <LoginForm />
-    </>
+    <EntryOptions />
   );
 }
