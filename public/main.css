@@ -30,3 +30,28 @@ body { margin: 0; }
     color: red;
     bottom: -20px;
 }
+
+.home-page {
+    font-family: sans-serif;
+}
+
+.home-page h1 {
+    font-size: 72px;
+    font-weight: 200;
+}
+
+.agent-info {
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+.agent-info > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+    font-size: 18px;
+}
