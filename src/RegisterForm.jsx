@@ -61,7 +61,7 @@ export default function RegisterForm() {
             </div>
             <div className="login-row" id="register-success">
                 <span>
-                    Success! Proceed to login.
+                    Success! Save your new token and proceed to log-in.
                 </span>
             </div>
         </form>
