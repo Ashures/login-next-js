@@ -52,7 +52,7 @@ export default function LoginForm() {
         checkLogin();
     };
 
-    // skipLogin();
+    skipLogin();
 
     return (
         <form id="login-form" onSubmit={handleSubmit} method="POST">
