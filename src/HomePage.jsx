@@ -37,7 +37,7 @@ export default function HomePage() {
     };
 
     return (
-        <div className="home-page">
+        <>
             {(agentInfo.symbol) 
             ? 
                 <>
@@ -45,10 +45,8 @@ export default function HomePage() {
                     <AgentInfo info={agentInfo} />
                 </>
             :
-                <>
-                    <img src="/img/loading.svg" />
-                </>
+                <img src="/img/loading.svg" />
             }
-        </div>
+        </>
     );
 };
