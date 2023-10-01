@@ -13,7 +13,6 @@ export default function HomePage() {
 
         return user;
     });
-    const [agent, setAgent] = useState("");
     const [agentInfo, setAgentInfo] = useState({});
 
     useEffect(() => {
@@ -28,10 +27,7 @@ export default function HomePage() {
 
         fetch("https://api.spacetraders.io/v2/my/agent", options)
         .then(res => res.json())
-        .then(data => {
-            setAgent(data.data.symbol);
-            setAgentInfo(data.data);
-        });
+        .then(data => setAgentInfo(data.data));
     }, [token]);
 
     const goToLogin = () => {
@@ -42,10 +38,10 @@ export default function HomePage() {
 
     return (
         <div className="home-page">
-            {(agent.length !== 0) 
+            {(agentInfo.symbol) 
             ? 
                 <>
-                    <h1>Welcome, {agent}</h1>
+                    <h1>Welcome, {agentInfo.symbol}</h1>
                     <AgentInfo info={agentInfo} />
                 </>
             :
