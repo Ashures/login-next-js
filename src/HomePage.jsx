@@ -46,7 +46,7 @@ export default function HomePage() {
                 </>
             :
                 <>
-                    <h1>Loading...</h1>
+                    <img src="/img/loading.svg" />
                 </>
             }
         </div>
